@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+
+<div class="scrollTop" title="Scroll to top">
+    <Icon name="mdi:chevron-up" />
+</div>
+
+<style>
+    .scrollTop {
+        align-items: center;
+        background-color: var(--font-color);
+        border-radius: 5px;
+        box-shadow: 0 0 80px rgba(0, 0, 0, .25);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-size: 2.3rem;
+        height: 48px;
+        inset-block-end: 4.5rem;
+        inset-inline-end: 4.5rem;
+        justify-content: center;
+        position: fixed;
+        visibility:hidden;
+        width: 48px;
+    }
+
+    .scrollTop.visible {
+        visibility: visible;
+    }
+</style>
+
+<script>
+
+    let btn = document.querySelector('.scrollTop');
+      
+    /**
+     * Scroll page to top
+     */
+    const scrollTop = function() {
+        window.scroll(0, 0);
+    };
+
+
+    /**
+     * Toggle button visibility
+     */
+    const toggleScrollTopBtn = () => {
+        if(window.scrollY > 100) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    };    
+
+
+    window.addEventListener('scroll', toggleScrollTopBtn);
+    btn.addEventListener('click', scrollTop);
+
+</script>

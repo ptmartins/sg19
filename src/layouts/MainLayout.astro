@@ -1,0 +1,33 @@
+---
+// Style imports
+import '../styles/global.css';
+
+// Component imports
+import Sidebar from '../components/Sidebar.astro';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title> { title } </title>
+        <meta name="description" content={ description } />
+	</head>
+	<body>
+        <Sidebar />
+        <main class="main">
+            <slot />
+        </main>
+	</body>
+</html>
+
+<style>
+    .main {
+        padding-block: 3rem;
+        padding-inline: 4.5rem
+    }
+</style>

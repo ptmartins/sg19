@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import SocialMenu from '../components/SocialMenu.astro';
+---
+
+<div class="sidebar">
+    <Image src="/images/sonia.jpeg" alt="Sonia Goncalves" width="180" height="180" class="thumb"/>
+    <SocialMenu /> 
+    <div class="address">
+        <p>12, Threshers Yard</p>
+        <p>IP28 7QD</p>
+        <p>Bury St. Edmunds</p>
+    </div>
+
+    <div class="citizenshipStatus">
+        <ul>
+            <li class="status">
+                <span>Nationality:</span> Portugal
+            </li>
+            <li class="status">
+                <span>Naturality:</span> Angola
+            </li>
+            <li class="status">
+                <span>UK:</span> Settled status
+            </li>
+        </ul>
+    </div>
+
+    <div class="skills">
+        <h4 class="sidebar__title">Skills</h4>
+        <ul>
+            <li class="skill"> Team leadership </li>
+            <li class="skill"> Strategic thinking </li>
+            <li class="skill"> Problem solving </li>
+            <li class="skill"> Lean principles knowledge </li>
+            <li class="skill"> Active listening </li>
+            <li class="skill"> Effective teamwork </li>
+        </ul>
+    </div>
+
+    <div class="languages">
+        <h4 class="sidebar__title">Languages</h4>
+        <ul>
+            <li class="language">
+                <span>Portuguese - </span> Native speaker
+            </li>
+            <li class="language">
+                <span>English - </span> First Certificate English, British Council (Proficiency)
+            </li>
+            <li class="language">
+                <span>French/Spanish - </span> Basic conversation
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .sidebar {
+        background-color: var(--sidebar-bg-color);
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        padding: 3rem;
+        min-width: ;
+    }
+
+    .thumb {
+        border-radius: 50%;
+        display: block;
+        margin-block: 0 1.5rem; 
+        margin-inline: auto;
+    }
+
+    .address {
+        margin-block-end: 1.5rem;
+        opacity: .75;
+    }
+
+    .sidebar__title {
+        margin-block-end: .75rem;
+        text-transform: uppercase;
+    }
+
+    .languages span,
+    .citizenshipStatus span {
+        font-weight: 700;
+        margin-inline-end: .375rem;
+    }
+
+    .skills {
+        margin-block: 1.5rem;
+    }
+
+    .status,
+    .skill,
+    .language {
+        margin-block-end: .375rem;
+        opacity: .75;
+    }
+
+    @media all and (min-width: 1024px) {
+
+        .sidebar {
+            min-width: 300px;
+        }
+
+    }
+</style>

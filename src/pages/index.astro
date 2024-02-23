@@ -1,0 +1,246 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Accordion from '../components/Accordion.astro';
+import ScrollUp from '../components/ScrollUp.astro';
+
+const accordionItems = [
+	{ 
+		role:  'Head of Global Operations',
+		place: 'Wellcome Sanger Institute, reporting to Chief Operating Officer',
+		dates: 'June 2023 - present',
+		items: [
+			'Develop the global operational strategy and roadmap for implementation.', 
+			'Strategically lead and manage the delivery of large scale genomic surveillance operations in the UK and globally across partner organisations; lead the delivery of an implementation programme for the decentralisation of genomic sequencing.',
+			'Driving key projects and initiatives to deliver operational excellence in a multi-disease model.',
+			'Develop and implement a quality control policy for the organisation (accreditation, quality management systems).',
+			'Develop and maintain relationships with key stakeholders from government, global health organisations, funding organizations, partner organizations across academia and public health.',
+			'Strategic and operational oversight of operational budget; preparation of funding bids',
+			'Full line management responsibility for a team of >40 staff (with managers), overseeing activities for recruitment, retention, performance, management and career development.'
+		],
+		keyAchievements: 'Implementation of a multi-disease operational model; established partnerships with key stakeholders in global health; 5 operational labs generating genomic surveillance data in country (Ghana, The Gambia, Vietnam, Thailand, Indonesia.'
+	},
+	{ 
+		role:  'Head of Service Delivery',
+		place: 'Wellcome Sanger Institute, reporting to Head of Genomic Surveillance Unit',
+		dates: 'September 2019 - May 2023',
+		items: [
+			'Accountable for the delivery of multi-million£ service contracts to UK Health Security Agency (UK-HSA) for the end-to-end sequencing operations for national genomic surveillance of SARS-CoV-2; strategically lead and manage delivery of activities across one cross multidisciplinary team of over 160 staff.',
+			'Responsible for implementation of changes for continuous improvement of the service and quality control practices.',
+			'Develop and maintain relationships with external senior stakeholders in the UK Health Security Agency, NHS labs and COG-UK Consortium partners.',
+			'Responsible for the preparation of service proposals (with costing) and negotiation of service contracts with internal and external legal teams.',
+			'Lead the delivery of full end to end malaria genomic surveillance operations in the UK and in 6 countries across Asia and Africa.',
+			'Full line management responsibility for a team of 20 staff (with managers), overseeing activities for recruitment, retention, performance, management and career development.'
+
+		],
+		keyAchievements: 'Strategic partnership with UK-HSA; sequencing of 3M Covid-19 samples; reduction of turnaround time from 26 days to <2.4 days from sample to data; increase of number of samples processed weekly from 600 to 69,000; reduction of sequencing failure from 30% to 0%'
+	},
+	{ 
+		role:  'Senior Scientific Manager',
+		place: 'Wellcome Sanger Institute, reporting to Head of Programme',
+		dates: 'February 2016 - August 2019',
+		items: [
+			'Strategic oversight and delegated responsibility for the operational management of the Kwiatkowski group scientific programme, within the framework of the Malaria Genomic Epidemiology Network MalariaGEN (https://www.malariagen.net), and the Sanger Parasites and Microbes Programme.',
+			'Coordination and prioritisation of activities of research and translational work, liaising directly with the laboratory, bioinformatics and software development teams in Cambridge, Oxford and Bangkok, Thailand.',
+			'Oversight of the MalariaGEN Partner Network, in the context of collaborative projects and individual partnerships.',			
+			'Accountable for the implementation and delivery of internal sequencing operations to support the successful delivery of the scientific programme.',
+			'Accountable for management of laboratories and compliance with Human Tissue Act and Health and Safety regulations.',
+			'Direct line management responsibility of 6 staff.'
+		],
+		keyAchievements: 'Generating up to 20k high-quality, curated parasite & vector samples per year; implementation of a tracking system traceability of human relevant material.'
+	},
+	{ 
+		role:  'Chief Executive Officer',
+		place: 'Centro de Biotecnologia Agrícola e Agro-Alimentar do Alentejo (CEBAL), reporting to Director of Centre',
+		dates: 'January 2009 - January 2014',
+		items: [
+			'Strategic oversight and delegated responsibility for the operational management of the Institute (30 staff).',
+			'Responsible for external communications and building of relations with key stakeholders, associates, partners, funding agencies, regional and national government, general public and media.',
+			'Fundraising to support the scientific strategy of the Institute (infrastructure projects, recruitment of postdoctoral researchers and sponsors, co-participation in research projects by private companies).',
+			'Preparation of annual report and financial statements.'
+		],
+		keyAchievements: 'Definition and implementation of procedures for improvement of the different functions within the institute, technical support services, lab management, health and safety, science communication, financial reporting, creation of company culture, human resources; increase staff numbers by 50%'
+	},
+	{ 
+		role:  'Principal Investigator',
+		place: 'Centro de Biotecnologia Agrícola e Agro-Alimentar do Alentejo (CEBAL), reporting to Director of Centre',
+		dates: 'January 2008 - January 2016',
+		items: [
+			'Establishment of a research group focused on the molecular regulation of cork formation (direct line management of a team of 7).',
+			'Implementation of a genomics research programme on cork oak – Lead PI in the project for the sequencing of the genome of cork oak, a multi-institution pioneer study in the country, 1M€. Responsible for raising 20% of project funds from private companies from the cork industry.',
+			'Establishment of national and international collaborations.',
+			'Lead Scientific Representative of BioData - ELIXIR Node in Portugal.',		
+			'Grants preparation and submission, scientific papers writing and review.'
+		],
+		keyAchievements: 'Sequencing the genome of the national tree, cork oak; coordination of 4 national projects, total funding achieved 1.5M€; secured funds from private sector for research projects; supervision of 13 undergraduate and PhD students and postdoctoral fellows; organization of 7 scientific meetings and public engagement activities.'
+	}
+]
+---
+
+<MainLayout title="Resume" description="Lorem ipsum"> 
+	<h1 class="title"> Sonia Goncalves </h1>
+	<div class="menu">
+		<a href="#workExperience" class="btn link">Work Experience</a>
+		<a href="#qualifications" class="btn link">Qualifications</a>
+		<a href="#grants" class="btn link">Active Grants</a>
+		<a href="#boards" class="btn link">Boards and Committees</a>
+		<a href="#awards" class="btn link">Awards</a>
+		<a href="#education" class="btn link">Education</a>
+		<a href="#interests" class="btn link">Interests</a>
+	</div>
+
+	<section id="workExperience" class="section section--workExperience">
+		<h2 class="section__title">Work experience</h2>
+		<Accordion items={ accordionItems } />
+	</section>
+
+	<!-- QUALIFICATIONS -->
+	<section id="qualifications" class="section section--qualifications">
+		<h2 class="section__title">Qualifications</h2>
+		<ul class="qualifications">
+			<li class="qualification">Chartered Manager, Chartered Management Institute, ongoing</li>
+			<li class="qualification">Management and Leadership Training Programme, Talented Woman Impact Programme, Wellcome Sanger Institute, November 2018 – March 2019</li>
+			<li class="qualification">Good Research Practice, Medical Research Council, 2019</li>
+			<li class="qualification">Research and Human Tissue Legislation, Overview of Human Tissue Act 2004 
+				and Human Tissue (Scotland) Act 2006, Medical Research Council, 2019</li>
+			<li class="qualification">Management in Action Programme, Wellcome Sanger Institute, ILM 
+				(Institute of Management and Leadership) certification, September-December 2016</li>
+		</ul>
+	</section>
+
+	<!-- ACTIVE GRANTS -->
+	<section id="grants" class="section section--grants">
+		<h2 class="section__title">Active Grants</h2>
+		<ul class="grants">
+			<li class="grant">
+				<span class="dates">2022 - 2025</span>
+				Global Health Research Group on Establishing Regional Hubs for Genomic Surveillance in West Africa”, £3M
+			</li>
+			<li class="grant">
+				<span class="dates">2019 - 2022</span>
+				Global Health Research Group on genomic surveillance of malaria in West Africa”, £3M
+			</li>
+		</ul>
+
+	</section>
+
+	<!-- BOARDS & COMMITTEES -->
+	<section id="boards" class="section section--boards">
+		<h2 class="section__title">Boards & Committees</h2>
+		<ul class="boards">
+			<li class="board">
+				<span class="dates">2023 - Present</span>
+				Member of the International Pathogen Surveillance Network working group, World Health Organisation (Berlin Hub)
+			</li>
+			<li class="board">
+				<span class="dates">2023 - Present</span>
+				GSU Infrastructure Transition Programme Board, Wellcome Sanger Institute
+			</li>
+			<li class="board">
+				<span class="dates">2021 - Present</span>
+				Sanger Institute and Connecting Science Research Ethics Committee, Genome Campus
+			</li>
+			<li class="board">
+				<span class="dates">2020 - 2022</span>
+				Covid-19 Project Board, Wellcome Sanger Institute
+			</li>
+			<li class="board">
+				<span class="dates">2020-2022</span>
+				Genomics Programme Board, UK-Health Security Agency
+			</li>
+		</ul>
+	</section>
+
+	<!-- AWARDS -->
+	<section id="awards" class="section section--awards">
+		<h2 class="section__title">Awards</h2>
+		<ul class="awards">
+			<li class="award">
+				<span class="dates">2022: </span>Stars for Science Leadership (Award)</li> 
+			<li class="award"><span class="dates">2021: </span>Covid-19 Heroes Leadership (Nomination)</li>
+		</ul>
+	</section>
+
+	<!-- EDUCATION -->
+	<section id="education" class="section section--education">
+		<h2 class="section__title">Education</h2>
+		<ul class="education">
+			<li class="education__item">
+				<span class="dates">2023 - present: </span>
+				MSc in Global Health Policy, 
+				London School of Hygiene and Tropical Medicine
+			</li>
+			<li class="education__item">
+				<span class="dates">2001 – 2005: </span>
+				PhD in Biology, NOVA University of Lisbon
+			</li>
+			<li class="education__item">
+				<span class="dates">1993 – 1998: </span>
+				BSc in Plant Biology, Faculty of Science of the University of Lisbon (pre Bologne)
+			</li>
+		</ul>
+	</section>
+
+	<!-- INTERESTS -->
+	<section id="interests" class="section section--interests">
+		<h2 class="section__title">Interests</h2>
+		<ul class="interests">
+			<li class="chip interest">
+				Reading
+			</li>
+			<li class="chip interest">Painting / Drawing</li>
+			<li class="chip interest">Outdoor activities</li>
+			<li class="chip interest">Travel</li>
+ 
+		</ul>
+	</section>
+
+	<ScrollUp />
+</MainLayout>
+
+<style>
+
+	.title {
+        font-size: 3.2rem;
+        font-weight: 700;
+		margin-block-end: 1.5rem;
+    }
+
+	.menu {
+		display: flex;
+		gap: .75rem;
+		margin-block-end: 3rem;
+	}
+
+	.section {
+		margin-block-end: 4.5rem;
+	}
+
+	.section__title {
+		border-block-end: 1px solid var(--font-color);
+		margin-block-end: 1.5rem;
+		padding-block-end: 1.5rem;
+	}
+
+	.qualifications,
+	.grants,
+	.boards,
+	.awards,
+	.education {
+		list-style: disc;
+		padding-inline-start: 1.5rem;
+	}
+
+	.dates {
+		font-weight: 700;
+	}
+
+	.interests {
+		display: flex;
+		gap: .75rem;
+	}
+
+	.interest {
+		font-size: 1rem;
+	}
+
+</style>

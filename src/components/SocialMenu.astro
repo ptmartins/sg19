@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="socialMenu">
+    <ul class="social">
+        <li class="social__item">
+            <a href="tel:+44 07399 514604" class="link social__link" title="Phone">
+                <Icon name="mdi:phone" class="social__icon" /> 
+            </a>
+        </li>
+        <li class="social__item">
+            <a href="mailto:sclaaugoncalves@gmail.com" class="link social__link" title="Email">
+                <Icon name="mdi:email" class="social__icon" /> 
+            </a>
+        </li>
+        <li class="social__item">
+            <a href="" class="link social__link" title="ORCID">
+                <Icon name="academicons:orcid-square" class="social__icon" /> 
+            </a>
+        </li>
+        <li class="social__item">
+            <a href="https://www.linkedin.com/in/sonia-goncalves-8a819715" class="link social__link" title="Linkedin">
+                <Icon name="mdi:linkedin" class="social__icon" /> 
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+
+    .socialMenu {
+        margin-block: .75rem 1.5rem; 
+    }
+
+    .social {
+        display: flex;
+        gap: .75rem;
+        justify-content: space-between;
+    }
+
+    .social__link {
+        transition: var(--default-transition);
+    }
+
+    .social__link:hover {
+        color: var(--accent-color);
+    }
+
+    .social__icon {
+        font-size: 1.8rem;
+    }
+
+</style>
