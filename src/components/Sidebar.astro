@@ -1,9 +1,11 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import SocialMenu from '../components/SocialMenu.astro';
 ---
 
 <div class="sidebar">
+    <Icon name="mdi:close-box" class="closeIcon" />
     <Image src="/images/sonia.jpeg" alt="Sonia Goncalves" width="180" height="180" class="thumb"/>
     <SocialMenu /> 
     <div class="address">
@@ -60,18 +62,25 @@ import SocialMenu from '../components/SocialMenu.astro';
         display: flex;
         flex-direction: column;
         font-size: 14px;
-        height: 100vh;
+        inset-block-end: 0;
         inset-block-start: 0;
         inset-inline-start: 0;
-        margin-inline-start: -400px;
+        margin-inline-start: -450px;
         padding: 3rem;
         position: fixed;
-        width: 320px;
+        width: 420px;
     }
 
     .sidebar.active {
         margin-inline-start: 0;
         z-index: 10;
+    }
+
+    .closeIcon {
+        font-size: 2.3rem;
+        inset-inline-end: 3rem;
+        inset-block-start: 1.5rem;
+        position: absolute;
     }
 
     .thumb {
@@ -116,7 +125,11 @@ import SocialMenu from '../components/SocialMenu.astro';
 
         .sidebar {
             margin-inline-start: 0;
+            width: 340px;
         }
 
+        .closeIcon {
+            display: none;
+        }
     }
 </style>

@@ -273,6 +273,7 @@ const accordionItems = [
 <script>
 	const body = document.body;
 	const overlay = document.querySelector('.overlay');
+	const closeIcon = document.querySelector('.closeIcon');
 	const sidebarBtn = document.querySelector('.sidebarBtn');
 	const sidebar = document.querySelector('.sidebar');
 
@@ -292,5 +293,6 @@ const accordionItems = [
 	}
 
 	sidebarBtn.addEventListener('click', showSidebar);
+	closeIcon.addEventListener('click', closeMenu);
 	overlay.addEventListener('click', closeMenu);
 </script>
