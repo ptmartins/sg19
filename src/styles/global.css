@@ -52,6 +52,16 @@ ul li {
     padding-inline: 1rem;
 }
 
+.chip.small {
+    padding-block: .375rem;
+    padding-inline: .5rem;
+}
+
+.chip.accent {
+    background-color: var(--font-color);
+    color: #fff;
+}
+
 .btn:hover {
     background-color: var(--font-color);
     color: #fff;

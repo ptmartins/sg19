@@ -1,0 +1,19 @@
+<footer class="footer">
+    <div class="copyright">Copyright &copy; <span class="year"></span> | All rights reserved.</div>
+    <div class="designBy">Designed by <a href="https://ptmartins.github.io" class="link">Pedro Martins</a> </div>
+</footer>
+
+<style>
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        padding-block-start: 3rem;;
+    }
+</style>
+
+<script>
+    const yearEl = document.querySelector('.year');
+    const year = new Date().getFullYear().toString();
+
+    yearEl.textContent = year;
+</script>

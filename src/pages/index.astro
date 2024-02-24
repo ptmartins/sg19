@@ -3,6 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Accordion from '../components/Accordion.astro';
 import ScrollUp from '../components/ScrollUp.astro';
 
+import { Icon } from 'astro-icon/components';
+
 const accordionItems = [
 	{ 
 		role:  'Head of Global Operations',
@@ -77,7 +79,7 @@ const accordionItems = [
 ---
 
 <MainLayout title="Resume" description="Lorem ipsum"> 
-	<h1 class="title"> Sonia Goncalves </h1>
+	<h1 class="title"> <Icon name="mdi:menu" class="sidebarBtn"/> Sonia Goncalves </h1>
 	<div class="menu">
 		<a href="#workExperience" class="btn link">Work Experience</a>
 		<a href="#qualifications" class="btn link">Qualifications</a>
@@ -97,7 +99,7 @@ const accordionItems = [
 	<section id="qualifications" class="section section--qualifications">
 		<h2 class="section__title">Qualifications</h2>
 		<ul class="qualifications">
-			<li class="qualification">Chartered Manager, Chartered Management Institute, ongoing</li>
+			<li class="qualification">Chartered Manager, Chartered Management Institute, <span class="chip small accent">ongoing</span></li>
 			<li class="qualification">Management and Leadership Training Programme, Talented Woman Impact Programme, Wellcome Sanger Institute, November 2018 – March 2019</li>
 			<li class="qualification">Good Research Practice, Medical Research Council, 2019</li>
 			<li class="qualification">Research and Human Tissue Legislation, Overview of Human Tissue Act 2004 
@@ -112,12 +114,12 @@ const accordionItems = [
 		<h2 class="section__title">Active Grants</h2>
 		<ul class="grants">
 			<li class="grant">
-				<span class="dates">2022 - 2025</span>
-				Global Health Research Group on Establishing Regional Hubs for Genomic Surveillance in West Africa”, £3M
+				<span class="dates">2022 - 2025: </span>
+				Global Health Research Group on Establishing Regional Hubs for Genomic Surveillance in West Africa”: <span class="chip small accent">£3M</span>
 			</li>
 			<li class="grant">
-				<span class="dates">2019 - 2022</span>
-				Global Health Research Group on genomic surveillance of malaria in West Africa”, £3M
+				<span class="dates">2019 - 2022: </span>
+				Global Health Research Group on genomic surveillance of malaria in West Africa”: <span class="chip small accent">£3M</span>
 			</li>
 		</ul>
 
@@ -128,23 +130,23 @@ const accordionItems = [
 		<h2 class="section__title">Boards & Committees</h2>
 		<ul class="boards">
 			<li class="board">
-				<span class="dates">2023 - Present</span>
+				<span class="dates">2023 - Present: </span>
 				Member of the International Pathogen Surveillance Network working group, World Health Organisation (Berlin Hub)
 			</li>
 			<li class="board">
-				<span class="dates">2023 - Present</span>
+				<span class="dates">2023 - Present: </span>
 				GSU Infrastructure Transition Programme Board, Wellcome Sanger Institute
 			</li>
 			<li class="board">
-				<span class="dates">2021 - Present</span>
+				<span class="dates">2021 - Present: </span>
 				Sanger Institute and Connecting Science Research Ethics Committee, Genome Campus
 			</li>
 			<li class="board">
-				<span class="dates">2020 - 2022</span>
+				<span class="dates">2020 - 2022: </span>
 				Covid-19 Project Board, Wellcome Sanger Institute
 			</li>
 			<li class="board">
-				<span class="dates">2020-2022</span>
+				<span class="dates">2020 - 2022: </span>
 				Genomics Programme Board, UK-Health Security Agency
 			</li>
 		</ul>
@@ -155,8 +157,8 @@ const accordionItems = [
 		<h2 class="section__title">Awards</h2>
 		<ul class="awards">
 			<li class="award">
-				<span class="dates">2022: </span>Stars for Science Leadership (Award)</li> 
-			<li class="award"><span class="dates">2021: </span>Covid-19 Heroes Leadership (Nomination)</li>
+				<span class="dates">2022: </span>Stars for Science Leadership <span class="chip small accent">Award</span></li> 
+			<li class="award"><span class="dates">2021: </span>Covid-19 Heroes Leadership <span class="chip small accent">Nomination</span></li>
 		</ul>
 	</section>
 
@@ -195,20 +197,26 @@ const accordionItems = [
 	</section>
 
 	<ScrollUp />
+
 </MainLayout>
 
 <style>
 
 	.title {
+		align-items: center;
+		display: flex;
         font-size: 3.2rem;
         font-weight: 700;
 		margin-block-end: 1.5rem;
     }
 
+	.sidebarBtn {
+		cursor: pointer;
+		margin-inline-end: 1.5rem;
+	}
+
 	.menu {
-		display: flex;
-		gap: .75rem;
-		margin-block-end: 3rem;
+		display: none;
 	}
 
 	.section {
@@ -243,4 +251,42 @@ const accordionItems = [
 		font-size: 1rem;
 	}
 
+	@media all and (min-width: 1024px) {
+		.sidebarBtn {
+			display: none;
+		}
+
+		.menu {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .75rem;
+			margin-block-end: 3rem;
+		}
+	}
+
 </style>
+
+<script>
+	const body = document.body;
+	const overlay = document.querySelector('.overlay');
+	const sidebarBtn = document.querySelector('.sidebarBtn');
+	const sidebar = document.querySelector('.sidebar');
+
+	const showSidebar = () => {
+		body.classList.add('sidebarOpen');
+		sidebar.classList.add('active');
+	}
+
+	const closeMenu = () =>{
+		if(sidebar.classList.contains('active')) {
+			sidebar.classList.remove('active');
+		}
+
+		if(body.classList.contains('sidebarOpen')) {
+			body.classList.remove('sidebarOpen');
+		}
+	}
+
+	sidebarBtn.addEventListener('click', showSidebar);
+	overlay.addEventListener('click', closeMenu);
+</script>
