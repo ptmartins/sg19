@@ -8,14 +8,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <script>
 
-const accessToken = '54b4478f-c702-49f5-bf5a-372c8b59178e';
-const orcidId = 'APP-BDSEXE3R1Z0KE0KB';
-
 // Construct the API endpoint
 const endpoint = `https://pub.orcid.org/v3.0/${orcidId}/person`;
 
 fetch(endpoint, {
-  method: 'GET',
+  method: 'POST',
   headers: {
     'Authorization': `Bearer ${accessToken}`,
     'Accept': 'application/json'
