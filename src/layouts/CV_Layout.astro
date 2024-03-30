@@ -1,0 +1,54 @@
+---
+// Style imports
+import '../styles/global.css';
+
+// Component imports
+import Sidebar from '../components/Sidebar.astro';
+import Footer from '../components/Footer.astro';
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title> { title } </title>
+        <meta name="description" content={ description } />
+	</head>
+	<body>
+        <Sidebar />
+        <div class="overlay"></div>
+        <main class="main">
+            <slot />
+            <Footer />
+        </main>
+	</body>
+</html>
+
+<style>
+    .main {
+        padding-block: 1.5rem;
+        padding-inline: 1.5rem
+    }
+
+    body.sidebarOpen .overlay {
+        background-color: rgba(0, 0, 0, .5);
+        content: '';
+        display: inline-block;
+        height: 100%;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        position: fixed;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    @media all and (min-width: 1024px) {
+        .main {
+            margin-inline-start: 320px;
+            padding-inline: 4.5rem
+        }
+    }
+</style>

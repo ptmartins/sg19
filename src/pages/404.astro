@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Image from "astro/components/Image.astro";
+---
+
+<MainLayout>
+    <h1 class="error">
+        <Image src="/images/404.svg" alt="Erro" width="800" height="800"/>
+    </h1>
+    <a href="/" class="action__btn">Home</a>
+</MainLayout>
+
+<style>
+
+    .error {
+        inset-block-start: 60%;
+        inset-inline-start: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    .action__btn {
+        inset-block-start: 3rem;
+        inset-inline-end: 9rem;
+        position: absolute;
+    }
+
+</style>

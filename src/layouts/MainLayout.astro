@@ -3,8 +3,8 @@
 import '../styles/global.css';
 
 // Component imports
-import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
+import Image from 'astro/components/Image.astro';
 const { title, description } = Astro.props;
 ---
 
@@ -18,37 +18,53 @@ const { title, description } = Astro.props;
         <meta name="description" content={ description } />
 	</head>
 	<body>
-        <Sidebar />
-        <div class="overlay"></div>
         <main class="main">
-            <slot />
-            <Footer />
+            <section class="section section--hero">
+                <div class="bg">
+                    <Image src="/images/bg.svg" alt="Background" width="1640" height="940" /> 
+                </div>
+                <slot />
+            </section>
         </main>
+        <div class="footer">
+            <Footer />
+        </div>
 	</body>
 </html>
 
 <style>
-    .main {
-        padding-block: 1.5rem;
-        padding-inline: 1.5rem
+
+    body {
+        display: flex;
+        flex-direction: column;
     }
 
-    body.sidebarOpen .overlay {
-        background-color: rgba(0, 0, 0, .5);
-        content: '';
-        display: inline-block;
+    .main {
+        flex-grow: 1;
+        position: relative;
+    }
+
+    .section--hero {
+        height: 80vh;
+    }
+
+    .bg {
         height: 100%;
         inset-block-start: 0;
-        inset-inline-start: 0;
-        position: fixed;
-        width: 100vw;
-        z-index: 1;
+        inset-block-start: 0;
+        position: absolute;
+        width: 100%;
     }
 
-    @media all and (min-width: 1024px) {
-        .main {
-            margin-inline-start: 320px;
-            padding-inline: 4.5rem
-        }
+    .bg img {
+        height: 100%;
+        object-fit: contain;  
+        object-position: left;
+        width: 100%;
     }
+
+    .footer {
+        padding: 1.5rem 9rem;
+    }
+
 </style>

@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+    Orcid
+</MainLayout>
+
+<script>
+
+// const accessToken = '54b4478f-c702-49f5-bf5a-372c8b59178e';
+// const orcidId = 'APP-BDSEXE3R1Z0KE0KB';
+
+// Construct the API endpoint
+const endpoint = `https://sandbox.orcid.org/0009-0006-3590-866X`;
+
+fetch(endpoint)
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+  console.log('ORCID API response:', data);
+})
+
+</script>
